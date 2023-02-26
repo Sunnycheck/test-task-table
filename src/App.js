@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { useState } from "react";
+import Main from "./components/Main";
+import Header from "./components/Header";
+import { Container } from "@mui/material";
+import Footer from "./components/Footer";
+
+import backgroundImage from "./img/img.jpg";
 
 function App() {
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  const handlDataLoaded = () => {
+    setIsDataLoaded(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container
+      maxWidth="xl"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        height: "100vh",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <Header />
+      <Main onDataLoaded={handlDataLoaded} />
+      {isDataLoaded && <Footer />}
+    </Container>
   );
 }
 

@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  margin: 30px 0;
+}
+.loading {
+  text-align: center;
+}
+.table-wrapper::-webkit-scrollbar {
+  width: 35px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background-color: rgb(235, 240, 241);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(93, 166, 207);
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(56, 149, 202);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  margin-right: 30px;
+  margin-left: 30px;
+  white-space: nowrap;
+}
+
+.button_custom {
+  background-color: rgb(93, 166, 207);
+  color: white;
+  /* white-space: nowrap; */
+  padding: 5px 20px;
+  border-style: none;
+  margin-top: 15px;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.button_custom:hover {
+  background-color: rgb(95, 91, 91);
+}
+.button_custom:active,
+.button_custom:visited {
+  background-color: black;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  color: white;
+  background-color: rgb(93, 166, 207);
+  text-align: left;
+}
+th,
+td {
+  min-width: 100%;
+  height: auto;
+  font-size: 16px;
+  font-family: inherit;
+  color: black;
+  padding-right: 15px;
+  padding-left: 15px;
+  outline: 1px solid #e1e0e0;
+  white-space: wrap;
+}
+thead th:nth-child(2) {
+  width: 25%;
+}
+
+thead th:nth-child(3),
+thead th:nth-child(4) {
+  width: 50%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(204, 226, 233);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(236, 246, 248);
+}
+
+.table-wrapper {
+  display: flex;
+  margin: 0px;
+  padding: 1px;
+  /* max-width:fit-content; */
+  max-height: 320px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.table-header {
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 575px) {
+  th,
+  td {
+    font-size: 12px;
+    font-family: inherit;
+    color: black;
+    padding: 0;
+  }
+  thead {
+    text-align: center;
+  }
+  .table-header {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+  .table-wrapper::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .buttons {
+    display: flex;
+
+    margin: 15px 0px;
+  }
+
+  .button_custom {
+    padding: 5px 10px;
+    margin: auto;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,35 @@
+.homebutton {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-header {
+  margin: 0;
+  padding: 0;
+  color: grey;
+  font-family: "Tilt Warp", cursive;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+img {
+  width: 220px;
+}
+
+@media (max-width: 575px) {
+  img {
+    width: 100px;
+  }
+  .text-header {
+    font-size: 15px;
+  }
+  .homebutton {
+    font-size: 20px;
+  }
+}

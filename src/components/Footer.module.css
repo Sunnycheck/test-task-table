@@ -1,0 +1,30 @@
+.text {
+  margin: 0;
+  padding: 0;
+  font-family: "Tilt Warp", cursive;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+}
+
+.text-header {
+  margin: 0;
+  padding: 0;
+  color: grey;
+  font-family: "Tilt Warp", cursive;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.wrapper {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 575px) {
+  .text {
+    font-size: 15px;
+  }
+  .text-header {
+    font-size: 15px;
+  }
+}
