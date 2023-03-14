@@ -7,15 +7,30 @@ const Main = ({ onDataLoaded }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await fetch("http://127.0.0.1/api/test");
-      const responseData = await response.json();
-      setData(responseData);
-      setLoading(false);
-      console.log(responseData);
-      onDataLoaded();
+    let interval = setInterval(() =>{
+      const getData = async () => {
+        const response = await fetch("http://127.0.0.1/api/test");
+        const responseData = await response.json();
+        setData(responseData);
+        setLoading(false);
+        console.log(responseData);
+        onDataLoaded();
+        
+      };
+      getData();
+    }, 10000);
+
+    return () => {
+      clearInterval(interval);
     };
-    getData();
+   
+    
+    // const timer = setTimeout(() => {
+    //   getData();
+    // }, 50);
+
+    //return () => clearTimeout(timer);
+  
   }, [onDataLoaded]);
 
   if (loading) {
